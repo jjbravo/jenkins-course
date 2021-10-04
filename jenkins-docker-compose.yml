@@ -9,7 +9,7 @@ services:
             - 50000:50000
         container_name: jenkins
         volumes: 
-            - /tmp/jenkins:/var/jenkins_home # Remember that, the tmp diretory is d
+            - ~/jenkins:/var/jenkins_home # Remember that, the tmp diretory is d
             - /var/run/docker.sock:/var/run/docker.sock
-            - /usr/local/bin/docker:/usr/bin/docker
+            - /usr/local/bin/docker:/usr/local/bin/docker
             
