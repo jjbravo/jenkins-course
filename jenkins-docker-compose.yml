@@ -7,7 +7,7 @@ services:
         ports: 
             - 8090:8080
             - 50000:50000
-        container_name: jenkins
+        container_name: jenkins-bratc
         volumes: 
             - ~/jenkins_home:/var/jenkins_home # Remember that, the tmp diretory is d
             - /var/run/docker.sock:/var/run/docker.sock
