@@ -11,5 +11,5 @@ services:
         volumes: 
             - ~/jenkins_home:/var/jenkins_home # Remember that, the tmp diretory is d
             - /var/run/docker.sock:/var/run/docker.sock
-            - /usr/bin/docker:/usr/bin/docker
+            #- /usr/bin/docker:/usr/bin/docker
             
