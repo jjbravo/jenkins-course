@@ -1,15 +1,18 @@
-version: '3.2'
+version: "3"
+ 
 services:
-    jenkins:
-        image: jenkins/jenkins:lts
-        privileged: true
-        user: root
-        ports: 
-            - 8090:8080
-            - 50000:50000
-        container_name: jenkins-bratc
-        volumes: 
-            - ~/jenkins_home:/var/jenkins_home # Remember that, the tmp diretory is d
-            - /var/run/docker.sock:/var/run/docker.sock
-            #- /usr/bin/docker:/usr/bin/docker
-            
+  jenkins:
+    user: root
+    image: "jenkinsci/blueocean:1.23.1"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+      - /usr/local/bin/docker:/usr/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - mynet
+    
+networks:
+  mynet:
+    driver: bridge
